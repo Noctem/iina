@@ -1,26 +1,27 @@
 PODS:
   - GRMustache.swift (2.0.0)
-  - GzipSwift (4.0.4)
+  - GzipSwift (4.1.0)
   - Just (0.7.1)
-  - PromiseKit (6.8.2):
-    - PromiseKit/CorePromise (= 6.8.2)
-    - PromiseKit/Foundation (= 6.8.2)
-    - PromiseKit/UIKit (= 6.8.2)
-  - PromiseKit/CorePromise (6.8.2)
-  - PromiseKit/Foundation (6.8.2):
+  - PromiseKit (6.8.3):
+    - PromiseKit/CorePromise (= 6.8.3)
+    - PromiseKit/Foundation (= 6.8.3)
+    - PromiseKit/UIKit (= 6.8.3)
+  - PromiseKit/CorePromise (6.8.3)
+  - PromiseKit/Foundation (6.8.3):
     - PromiseKit/CorePromise
-  - Sparkle (1.21.2)
+  - Sparkle (1.21.3)
 
 DEPENDENCIES:
   - GRMustache.swift (from `https://github.com/iina/GRMustache.swift`)
   - GzipSwift
   - Just (from `https://github.com/iina/Just`, branch `swift-5`)
-  - PromiseKit (from `https://github.com/iina/PromiseKit`, branch `xcode-10.2-beta1`)
+  - PromiseKit
   - Sparkle
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GzipSwift
+    - PromiseKit
     - Sparkle
 
 EXTERNAL SOURCES:
@@ -29,28 +30,22 @@ EXTERNAL SOURCES:
   Just:
     :branch: swift-5
     :git: https://github.com/iina/Just
-  PromiseKit:
-    :branch: xcode-10.2-beta1
-    :git: https://github.com/iina/PromiseKit
 
 CHECKOUT OPTIONS:
   GRMustache.swift:
     :commit: 3e6778e4b8a134e3f96d04d6c15c7213bd7d9935
     :git: https://github.com/iina/GRMustache.swift
   Just:
-    :commit: aeb7df1382726d970c1712bd46f9ba974bc84dcf
+    :commit: d0ae3f9bc2d6bf247b19217764a096bbac55f007
     :git: https://github.com/iina/Just
-  PromiseKit:
-    :commit: b1c858592b24cb8fa9a07e26ce22dda0c7c4c701
-    :git: https://github.com/iina/PromiseKit
 
 SPEC CHECKSUMS:
   GRMustache.swift: 53405b02c374520f9193cf41bfa677f03a6d70aa
-  GzipSwift: 1a5bc5f7827e09846b0635b5079f1224bc3b1c3a
+  GzipSwift: df1636fa095bd8f21d98db14e7393ecc9e230fed
   Just: 60c0995e04718eb621a07abef45ce6883c562f2b
-  PromiseKit: 193df05a4921f0f6a738acd467c8daf6f0f3c054
-  Sparkle: 1678d4707e7665960c7d1b43aca125e6392d11c4
+  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
+  Sparkle: 3f75576db8b0265adef36c43249d747f22d0b708
 
-PODFILE CHECKSUM: 124de07bdd22989c3458d3f0a6733f30790db60d
+PODFILE CHECKSUM: 586891e333481644e442619254589b11739eecf3
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.6.1

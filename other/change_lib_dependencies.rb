@@ -54,8 +54,8 @@ class DylibFile
   end
 end
 
-linked_files = Dir["#{`brew --prefix mpv`.chomp}/lib/*.dylib"]
-linked_files += Dir["#{`brew --prefix ffmpeg`.chomp}/lib/*.dylib"]
+linked_files = Dir["#{`brew --prefix mpv-iina`.chomp}/lib/*.dylib"]
+linked_files += Dir["#{`brew --prefix ffmpeg-iina`.chomp}/lib/*.dylib"]
 proj_path = File.expand_path(File.join(File.dirname(__FILE__), '../'))
 lib_folder = File.join(proj_path, "deps/lib/")
 

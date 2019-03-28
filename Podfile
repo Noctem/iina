@@ -1,4 +1,4 @@
-platform :osx, '10.11'
+platform :osx, '10.14'
 
 target 'iina' do
   
@@ -6,7 +6,7 @@ target 'iina' do
 
   # Pods for iina
   pod 'Just', :git => 'https://github.com/iina/Just', :branch => 'swift-5'
-  pod 'PromiseKit', :git => 'https://github.com/iina/PromiseKit', :branch => 'xcode-10.2-beta1'
+  pod 'PromiseKit'
   pod 'GzipSwift'
   pod 'GRMustache.swift', :git => 'https://github.com/iina/GRMustache.swift'
   pod 'Sparkle'
