@@ -73,19 +73,13 @@ class VideoView: NSView {
 
   func uninit() {
     uninitLock.lock()
-
     guard !isUninited else {
       uninitLock.unlock()
       return
     }
-
     player.mpv.mpvUninitRendering()
     isUninited = true
     uninitLock.unlock()
-  }
-
-  deinit {
-    uninit()
   }
 
   override func draw(_ dirtyRect: NSRect) {

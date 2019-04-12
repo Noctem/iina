@@ -310,25 +310,6 @@ class PlayerCore: NSObject {
     mainWindow.videoView.startDisplayLink()
   }
 
-  // unload main window video view
-  func uninitVideo() {
-    guard mainWindow.isWindowLoaded else { return }
-    mainWindow.videoView.stopDisplayLink()
-    mainWindow.videoView.uninit()
-  }
-
-  // Terminate mpv
-  func terminateMPV(sendQuit: Bool = true) {
-    guard !isMpvTerminated else { return }
-    savePlaybackPosition()
-    invalidateTimer()
-    uninitVideo()
-    if sendQuit {
-      mpv.mpvQuit()
-    }
-    isMpvTerminated = true
-  }
-
   // invalidate timer
   func invalidateTimer() {
     self.syncPlayTimeTimer?.invalidate()
