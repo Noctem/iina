@@ -18,7 +18,7 @@
 		6100FF2B1EDF9806002CF0FB /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 6100FF2A1EDF9806002CF0FB /* dsa_pub.pem */; };
 		6312419522A273E6005C7DD1 /* liblz4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312418622A273E4005C7DD1 /* liblz4.1.dylib */; };
 		6312419622A273E6005C7DD1 /* libx264.155.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312418722A273E4005C7DD1 /* libx264.155.dylib */; };
-		6312419722A273E6005C7DD1 /* libx265.169.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312418822A273E5005C7DD1 /* libx265.169.dylib */; };
+		6312419722A273E6005C7DD1 /* libx265.176.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312418822A273E5005C7DD1 /* libx265.176.dylib */; };
 		6312419822A273E6005C7DD1 /* libopus.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312418922A273E5005C7DD1 /* libopus.0.dylib */; };
 		6312419922A273E6005C7DD1 /* libzimg.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312418A22A273E5005C7DD1 /* libzimg.2.dylib */; };
 		6312419A22A273E6005C7DD1 /* libwavpack.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312418B22A273E5005C7DD1 /* libwavpack.1.dylib */; };
@@ -44,7 +44,7 @@
 		631241AE22A274B8005C7DD1 /* libvorbisenc.2.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 6312419322A273E6005C7DD1 /* libvorbisenc.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		631241AF22A274B8005C7DD1 /* libwavpack.1.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 6312418B22A273E5005C7DD1 /* libwavpack.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		631241B022A274B8005C7DD1 /* libx264.155.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 6312418722A273E4005C7DD1 /* libx264.155.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		631241B122A274B8005C7DD1 /* libx265.169.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 6312418822A273E5005C7DD1 /* libx265.169.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		631241B122A274B8005C7DD1 /* libx265.176.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 6312418822A273E5005C7DD1 /* libx265.176.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		631241B222A274B8005C7DD1 /* libzimg.2.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 6312418A22A273E5005C7DD1 /* libzimg.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8400D5C41E17C6D2006785F5 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D5C21E17C6D2006785F5 /* AboutWindowController.swift */; };
 		8400D5C61E1AB2F1006785F5 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8400D5C81E1AB2F1006785F5 /* MainWindowController.xib */; };
@@ -355,7 +355,7 @@
 				631241AE22A274B8005C7DD1 /* libvorbisenc.2.dylib in Copy Dylibs */,
 				631241AF22A274B8005C7DD1 /* libwavpack.1.dylib in Copy Dylibs */,
 				631241B022A274B8005C7DD1 /* libx264.155.dylib in Copy Dylibs */,
-				631241B122A274B8005C7DD1 /* libx265.169.dylib in Copy Dylibs */,
+				631241B122A274B8005C7DD1 /* libx265.176.dylib in Copy Dylibs */,
 				631241B222A274B8005C7DD1 /* libzimg.2.dylib in Copy Dylibs */,
 				847DAB3D2293EEFD00351AD7 /* libssl.1.0.0.dylib in Copy Dylibs */,
 				847DAB1E2293EEFD00351AD7 /* libbluray.2.dylib in Copy Dylibs */,
@@ -559,7 +559,7 @@
 		61C6D8870FEB96F250D1448D /* Pods-iina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iina.release.xcconfig"; path = "Pods/Target Support Files/Pods-iina/Pods-iina.release.xcconfig"; sourceTree = "<group>"; };
 		6312418622A273E4005C7DD1 /* liblz4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblz4.1.dylib; path = deps/lib/liblz4.1.dylib; sourceTree = "<group>"; };
 		6312418722A273E4005C7DD1 /* libx264.155.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libx264.155.dylib; path = deps/lib/libx264.155.dylib; sourceTree = "<group>"; };
-		6312418822A273E5005C7DD1 /* libx265.169.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libx265.169.dylib; path = deps/lib/libx265.169.dylib; sourceTree = "<group>"; };
+		6312418822A273E5005C7DD1 /* libx265.176.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libx265.176.dylib; path = deps/lib/libx265.176.dylib; sourceTree = "<group>"; };
 		6312418922A273E5005C7DD1 /* libopus.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopus.0.dylib; path = deps/lib/libopus.0.dylib; sourceTree = "<group>"; };
 		6312418A22A273E5005C7DD1 /* libzimg.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libzimg.2.dylib; path = deps/lib/libzimg.2.dylib; sourceTree = "<group>"; };
 		6312418B22A273E5005C7DD1 /* libwavpack.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libwavpack.1.dylib; path = deps/lib/libwavpack.1.dylib; sourceTree = "<group>"; };
@@ -1393,7 +1393,7 @@
 				847DAB0F2293EEF400351AD7 /* libswscale.5.dylib in Frameworks */,
 				847DAAF92293EEF400351AD7 /* libglib-2.0.0.dylib in Frameworks */,
 				847DAB0C2293EEF400351AD7 /* libarchive.13.dylib in Frameworks */,
-				6312419722A273E6005C7DD1 /* libx265.169.dylib in Frameworks */,
+				6312419722A273E6005C7DD1 /* libx265.176.dylib in Frameworks */,
 				847DAAFA2293EEF400351AD7 /* libpcre.1.dylib in Frameworks */,
 				847DAB102293EEF400351AD7 /* libtasn1.6.dylib in Frameworks */,
 				847DAB112293EEF400351AD7 /* libuchardet.0.dylib in Frameworks */,
@@ -1534,7 +1534,7 @@
 				6312419322A273E6005C7DD1 /* libvorbisenc.2.dylib */,
 				6312418B22A273E5005C7DD1 /* libwavpack.1.dylib */,
 				6312418722A273E4005C7DD1 /* libx264.155.dylib */,
-				6312418822A273E5005C7DD1 /* libx265.169.dylib */,
+				6312418822A273E5005C7DD1 /* libx265.176.dylib */,
 				6312418A22A273E5005C7DD1 /* libzimg.2.dylib */,
 				847DAADC2293EEF300351AD7 /* libarchive.13.dylib */,
 				847DAAC22293EEF100351AD7 /* libass.9.dylib */,
@@ -3296,7 +3296,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = OpenInIINA/OpenInIINA.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OpenInIINA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
@@ -3322,7 +3321,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = OpenInIINA/OpenInIINA.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OpenInIINA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
@@ -3367,7 +3365,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3391,6 +3389,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-march=native";
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
@@ -3428,7 +3427,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -3445,6 +3444,7 @@
 				INSTALL_PATH = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "-march=native";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 			};
@@ -3460,7 +3460,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -3499,7 +3498,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -3537,7 +3535,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
@@ -3560,7 +3557,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
