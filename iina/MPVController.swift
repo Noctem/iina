@@ -348,11 +348,11 @@ class MPVController: NSObject {
     var openGLInitParams = mpv_opengl_init_params(get_proc_address: mpvGetOpenGLFunc,
                                                   get_proc_address_ctx: nil,
                                                   extra_exts: nil)
-    var advanced: CInt = 1
+    // var advanced: CInt = 1
     var params = [
       mpv_render_param(type: MPV_RENDER_PARAM_API_TYPE, data: apiType),
       mpv_render_param(type: MPV_RENDER_PARAM_OPENGL_INIT_PARAMS, data: &openGLInitParams),
-      mpv_render_param(type: MPV_RENDER_PARAM_ADVANCED_CONTROL, data: &advanced),
+      // mpv_render_param(type: MPV_RENDER_PARAM_ADVANCED_CONTROL, data: &advanced),
       mpv_render_param()
     ]
     mpv_render_context_create(&mpvRenderContext, mpv, &params)
@@ -760,7 +760,7 @@ class MPVController: NSObject {
           player.sendOSD(data ? .pause : .resume)
           player.info.isPaused = data
         }
-        if player.mainWindow.isWindowLoaded {
+        if player.mainWindow.loaded {
           if Preference.bool(for: .alwaysFloatOnTop) {
             DispatchQueue.main.async {
               self.player.mainWindow.setWindowFloatingOnTop(!data)
@@ -892,14 +892,14 @@ class MPVController: NSObject {
       player.postNotification(.iinaAFChanged)
 
     case MPVOption.Window.fullscreen:
-      guard player.mainWindow.isWindowLoaded else { break }
+      guard player.mainWindow.loaded else { break }
       let fs = getFlag(MPVOption.Window.fullscreen)
       if fs != player.mainWindow.fsState.isFullscreen {
         DispatchQueue.main.async(execute: self.player.mainWindow.toggleWindowFullScreen)
       }
 
     case MPVOption.Window.ontop:
-      guard player.mainWindow.isWindowLoaded else { break }
+      guard player.mainWindow.loaded else { break }
       let ontop = getFlag(MPVOption.Window.ontop)
       if ontop != player.mainWindow.isOntop {
         DispatchQueue.main.async {
@@ -909,7 +909,7 @@ class MPVController: NSObject {
       }
 
     case MPVOption.Window.windowScale:
-      guard player.mainWindow.isWindowLoaded else { break }
+      guard player.mainWindow.loaded else { break }
       let windowScale = getDouble(MPVOption.Window.windowScale)
       if fabs(windowScale - player.info.cachedWindowScale) > 10e-10 {
         DispatchQueue.main.async {
