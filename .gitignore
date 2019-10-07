@@ -102,3 +102,4 @@ temp/
 browser/Firefox_Open_In_IINA/*
 !browser/Firefox_Open_In_IINA/manifest.json
 
+iina.xcodeproj/project.xcworkspace/xcshareddata
