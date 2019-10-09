@@ -16,12 +16,8 @@
 		496B19921E2968530035AF10 /* PIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496B19911E2968530035AF10 /* PIP.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5FE59D56E0B71860AC1EDCA8 /* Pods_iina.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867483705008F086E07B0A6B /* Pods_iina.framework */; };
 		6100FF2B1EDF9806002CF0FB /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 6100FF2A1EDF9806002CF0FB /* dsa_pub.pem */; };
-		6312419522A273E6005C7DD1 /* liblz4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312418622A273E4005C7DD1 /* liblz4.1.dylib */; };
 		631241A322A273E6005C7DD1 /* libidn2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312419422A273E6005C7DD1 /* libidn2.0.dylib */; };
 		631241A522A274B8005C7DD1 /* libidn2.0.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 6312419422A273E6005C7DD1 /* libidn2.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		631241A622A274B8005C7DD1 /* liblz4.1.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 6312418622A273E4005C7DD1 /* liblz4.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		63BC79E02329EC13005C7DD1 /* libzstd.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BC79DF2329EC13005C7DD1 /* libzstd.1.dylib */; };
-		63BC79E12329EC75005C7DD1 /* libzstd.1.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 63BC79DF2329EC13005C7DD1 /* libzstd.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		63E3B7CB232CA0F7005C7DD1 /* libsoxr.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E3B7CA232CA0F7005C7DD1 /* libsoxr.0.dylib */; };
 		63E3B7CC232CA109005C7DD1 /* libsoxr.0.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 63E3B7CA232CA0F7005C7DD1 /* libsoxr.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8400D5C41E17C6D2006785F5 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D5C21E17C6D2006785F5 /* AboutWindowController.swift */; };
@@ -319,9 +315,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				63E3B7CC232CA109005C7DD1 /* libsoxr.0.dylib in Copy Dylibs */,
-				63BC79E12329EC75005C7DD1 /* libzstd.1.dylib in Copy Dylibs */,
 				631241A522A274B8005C7DD1 /* libidn2.0.dylib in Copy Dylibs */,
-				631241A622A274B8005C7DD1 /* liblz4.1.dylib in Copy Dylibs */,
 				847DAB3D2293EEFD00351AD7 /* libssl.1.1.dylib in Copy Dylibs */,
 				847DAB1E2293EEFD00351AD7 /* libbluray.2.dylib in Copy Dylibs */,
 				847DAB322293EEFD00351AD7 /* libnettle.6.dylib in Copy Dylibs */,
@@ -521,9 +515,7 @@
 		5EF9F80421FB448700748374 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/KeyBinding.strings"; sourceTree = "<group>"; };
 		6100FF2A1EDF9806002CF0FB /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		61C6D8870FEB96F250D1448D /* Pods-iina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iina.release.xcconfig"; path = "Pods/Target Support Files/Pods-iina/Pods-iina.release.xcconfig"; sourceTree = "<group>"; };
-		6312418622A273E4005C7DD1 /* liblz4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblz4.1.dylib; path = deps/lib/liblz4.1.dylib; sourceTree = "<group>"; };
 		6312419422A273E6005C7DD1 /* libidn2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn2.0.dylib; path = deps/lib/libidn2.0.dylib; sourceTree = "<group>"; };
-		63BC79DF2329EC13005C7DD1 /* libzstd.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libzstd.1.dylib; path = deps/lib/libzstd.1.dylib; sourceTree = "<group>"; };
 		63E3B7CA232CA0F7005C7DD1 /* libsoxr.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsoxr.0.dylib; path = deps/lib/libsoxr.0.dylib; sourceTree = "<group>"; };
 		649AD3111F11B06D00244738 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		649AD3121F11B06D00244738 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainWindowController.strings; sourceTree = "<group>"; };
@@ -1357,7 +1349,6 @@
 				847DAAE62293EEF400351AD7 /* libavresample.4.dylib in Frameworks */,
 				847DAB012293EEF400351AD7 /* libgmp.10.dylib in Frameworks */,
 				847DAAF22293EEF400351AD7 /* libass.9.dylib in Frameworks */,
-				63BC79E02329EC13005C7DD1 /* libzstd.1.dylib in Frameworks */,
 				847DAAF82293EEF400351AD7 /* libavformat.58.dylib in Frameworks */,
 				847DAB072293EEF400351AD7 /* libjpeg.9.dylib in Frameworks */,
 				496B19921E2968530035AF10 /* PIP.framework in Frameworks */,
@@ -1372,7 +1363,6 @@
 				847DAAFA2293EEF400351AD7 /* libpcre.1.dylib in Frameworks */,
 				847DAB102293EEF400351AD7 /* libtasn1.6.dylib in Frameworks */,
 				847DAB112293EEF400351AD7 /* libuchardet.0.dylib in Frameworks */,
-				6312419522A273E6005C7DD1 /* liblz4.1.dylib in Frameworks */,
 				631241A322A273E6005C7DD1 /* libidn2.0.dylib in Frameworks */,
 				847DAB062293EEF400351AD7 /* libgraphite2.3.dylib in Frameworks */,
 				847DAAEF2293EEF400351AD7 /* libffi.6.dylib in Frameworks */,
@@ -1494,9 +1484,7 @@
 			isa = PBXGroup;
 			children = (
 				63E3B7CA232CA0F7005C7DD1 /* libsoxr.0.dylib */,
-				63BC79DF2329EC13005C7DD1 /* libzstd.1.dylib */,
 				6312419422A273E6005C7DD1 /* libidn2.0.dylib */,
-				6312418622A273E4005C7DD1 /* liblz4.1.dylib */,
 				847DAADC2293EEF300351AD7 /* libarchive.13.dylib */,
 				847DAAC22293EEF100351AD7 /* libass.9.dylib */,
 				847DAAD32293EEF300351AD7 /* libavcodec.58.dylib */,
@@ -3293,7 +3281,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OpenInIINA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.colliderli.iina.OpenInIINA;
@@ -3319,7 +3307,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OpenInIINA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.colliderli.iina.OpenInIINA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3360,7 +3348,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3381,7 +3369,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/mpv";
 				INSTALL_PATH = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-march=native";
@@ -3422,7 +3410,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -3437,7 +3425,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/mpv";
 				INSTALL_PATH = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = "-march=native";
 				SDKROOT = macosx;
@@ -3470,7 +3458,7 @@
 					"$(SRCROOT)/deps/lib",
 					"$(PROJECT_DIR)/deps/lib",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MODULEMAP_FILE = module.modulemap;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
@@ -3508,7 +3496,7 @@
 					"$(SRCROOT)/deps/lib",
 					"$(PROJECT_DIR)/deps/lib",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MODULEMAP_FILE = module.modulemap;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DRELEASE";
@@ -3532,7 +3520,7 @@
 				CODE_SIGN_STYLE = Manual;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -3554,7 +3542,7 @@
 				CODE_SIGN_STYLE = Manual;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
