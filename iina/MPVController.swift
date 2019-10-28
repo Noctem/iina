@@ -254,8 +254,6 @@ class MPVController: NSObject {
       return Preference.bool(for: key) ? nil : "no"
     }
 
-    setUserOption(PK.defaultCacheSize, type: .int, forName: MPVOption.Cache.cacheDefault)
-    setUserOption(PK.cacheBufferSize, type: .int, forName: MPVOption.Cache.cacheBackbuffer)
     setUserOption(PK.secPrefech, type: .int, forName: MPVOption.Cache.cacheSecs)
 
     setUserOption(PK.userAgent, type: .other, forName: MPVOption.Network.userAgent) { key in

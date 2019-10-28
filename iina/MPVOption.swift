@@ -864,30 +864,24 @@ struct MPVOption {
   }
 
   struct Cache {
-    /** --cache=<kBytes|yes|no|auto> */
+    /** --cache=<yes|no|auto> */
     static let cache = "cache"
-    /** --cache-default=<kBytes|no> */
-    static let cacheDefault = "cache-default"
-    /** --cache-initial=<kBytes> */
-    static let cacheInitial = "cache-initial"
-    /** --cache-seek-min=<kBytes> */
-    static let cacheSeekMin = "cache-seek-min"
-    /** --cache-backbuffer=<kBytes> */
-    static let cacheBackbuffer = "cache-backbuffer"
-    /** --cache-file=<TMP|path> */
-    static let cacheFile = "cache-file"
-    /** --cache-file-size=<kBytes> */
-    static let cacheFileSize = "cache-file-size"
     /** --no-cache */
     static let noCache = "no-cache"
     /** --cache-secs=<seconds> */
     static let cacheSecs = "cache-secs"
+    /** --cache-on-disk=<yes|no> */
+    static let cacheOnDisk = "cache-on-disk"
+    /** --cache-dir=<path> */
+    static let cacheDir = "cache-dir"
     /** --cache-pause=<yes|no> */
     static let cachePause = "cache-pause"
     /** --cache-pause-wait=<seconds> */
     static let cachePauseWait = "cache-pause-wait"
     /** --cache-pause-initial=<yes|no> */
     static let cachePauseInitial = "cache-pause-initial"
+    /** --cache-unlink-files=<immediate|whendone|no> */
+    static let cacheUnlinkFiles = "cache-unlink-files"
   }
 
   struct Network {

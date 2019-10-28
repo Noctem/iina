@@ -195,8 +195,6 @@ struct Preference {
     // Network
 
     static let enableCache = Key("enableCache")
-    static let defaultCacheSize = Key("defaultCacheSize")
-    static let cacheBufferSize = Key("cacheBufferSize")
     static let secPrefech = Key("secPrefech")
     static let userAgent = Key("userAgent")
     static let transportRTSPThrough = Key("transportRTSPThrough")
@@ -750,9 +748,7 @@ struct Preference {
     .autoSearchThreshold: 20,
 
     .enableCache: true,
-    .defaultCacheSize: 153600,
-    .cacheBufferSize: 153600,
-    .secPrefech: 100,
+    .secPrefech: 36000,
     .userAgent: "",
     .transportRTSPThrough: RTSPTransportation.tcp.rawValue,
     .ytdlEnabled: true,

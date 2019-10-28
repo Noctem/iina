@@ -103,7 +103,7 @@
 		847DAAFA2293EEF400351AD7 /* libpcre.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAACA2293EEF200351AD7 /* libpcre.1.dylib */; };
 		847DAAFB2293EEF400351AD7 /* libfribidi.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAACB2293EEF200351AD7 /* libfribidi.0.dylib */; };
 		847DAAFE2293EEF400351AD7 /* librtmp.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAACE2293EEF200351AD7 /* librtmp.1.dylib */; };
-		847DAAFF2293EEF400351AD7 /* liblua.5.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAACF2293EEF200351AD7 /* liblua.5.1.dylib */; };
+		847DAAFF2293EEF400351AD7 /* liblua.5.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAACF2293EEF200351AD7 /* liblua.5.2.dylib */; };
 		847DAB002293EEF400351AD7 /* libgnutls.30.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAAD02293EEF200351AD7 /* libgnutls.30.dylib */; };
 		847DAB012293EEF400351AD7 /* libgmp.10.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAAD12293EEF200351AD7 /* libgmp.10.dylib */; };
 		847DAB022293EEF400351AD7 /* libpng16.16.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAAD22293EEF200351AD7 /* libpng16.16.dylib */; };
@@ -148,7 +148,7 @@
 		847DAB2B2293EEFD00351AD7 /* libintl.8.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAAD42293EEF300351AD7 /* libintl.8.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		847DAB2C2293EEFD00351AD7 /* libjpeg.9.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAAD72293EEF300351AD7 /* libjpeg.9.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		847DAB2D2293EEFD00351AD7 /* liblcms2.2.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAADA2293EEF300351AD7 /* liblcms2.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		847DAB2F2293EEFD00351AD7 /* liblua.5.1.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAACF2293EEF200351AD7 /* liblua.5.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		847DAB2F2293EEFD00351AD7 /* liblua.5.2.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAACF2293EEF200351AD7 /* liblua.5.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		847DAB302293EEFD00351AD7 /* liblzma.5.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAADB2293EEF300351AD7 /* liblzma.5.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		847DAB312293EEFD00351AD7 /* libmpv.1.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAABA2293EEF100351AD7 /* libmpv.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		847DAB322293EEFD00351AD7 /* libnettle.6.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAABE2293EEF100351AD7 /* libnettle.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -351,7 +351,7 @@
 				847DAB162293EEFD00351AD7 /* libarchive.13.dylib in Copy Dylibs */,
 				847DAB172293EEFD00351AD7 /* libass.9.dylib in Copy Dylibs */,
 				847DAB1F2293EEFD00351AD7 /* libcrypto.1.1.dylib in Copy Dylibs */,
-				847DAB2F2293EEFD00351AD7 /* liblua.5.1.dylib in Copy Dylibs */,
+				847DAB2F2293EEFD00351AD7 /* liblua.5.2.dylib in Copy Dylibs */,
 				847DAB372293EEFD00351AD7 /* libpostproc.55.dylib in Copy Dylibs */,
 				847DAB232293EEFD00351AD7 /* libfribidi.0.dylib in Copy Dylibs */,
 				847DAB192293EEFD00351AD7 /* libavdevice.58.dylib in Copy Dylibs */,
@@ -843,7 +843,7 @@
 		847DAACA2293EEF200351AD7 /* libpcre.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcre.1.dylib; path = deps/lib/libpcre.1.dylib; sourceTree = "<group>"; };
 		847DAACB2293EEF200351AD7 /* libfribidi.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfribidi.0.dylib; path = deps/lib/libfribidi.0.dylib; sourceTree = "<group>"; };
 		847DAACE2293EEF200351AD7 /* librtmp.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = librtmp.1.dylib; path = deps/lib/librtmp.1.dylib; sourceTree = "<group>"; };
-		847DAACF2293EEF200351AD7 /* liblua.5.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblua.5.1.dylib; path = deps/lib/liblua.5.1.dylib; sourceTree = "<group>"; };
+		847DAACF2293EEF200351AD7 /* liblua.5.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblua.5.2.dylib; path = deps/lib/liblua.5.2.dylib; sourceTree = "<group>"; };
 		847DAAD02293EEF200351AD7 /* libgnutls.30.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgnutls.30.dylib; path = deps/lib/libgnutls.30.dylib; sourceTree = "<group>"; };
 		847DAAD12293EEF200351AD7 /* libgmp.10.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgmp.10.dylib; path = deps/lib/libgmp.10.dylib; sourceTree = "<group>"; };
 		847DAAD22293EEF200351AD7 /* libpng16.16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng16.16.dylib; path = deps/lib/libpng16.16.dylib; sourceTree = "<group>"; };
@@ -1374,7 +1374,7 @@
 				8403CEA72007CBD400645516 /* MediaPlayer.framework in Frameworks */,
 				5FE59D56E0B71860AC1EDCA8 /* Pods_iina.framework in Frameworks */,
 				847DAAE72293EEF400351AD7 /* librubberband.2.dylib in Frameworks */,
-				847DAAFF2293EEF400351AD7 /* liblua.5.1.dylib in Frameworks */,
+				847DAAFF2293EEF400351AD7 /* liblua.5.2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1508,7 +1508,7 @@
 				847DAAD42293EEF300351AD7 /* libintl.8.dylib */,
 				847DAAD72293EEF300351AD7 /* libjpeg.9.dylib */,
 				847DAADA2293EEF300351AD7 /* liblcms2.2.dylib */,
-				847DAACF2293EEF200351AD7 /* liblua.5.1.dylib */,
+				847DAACF2293EEF200351AD7 /* liblua.5.2.dylib */,
 				847DAADB2293EEF300351AD7 /* liblzma.5.dylib */,
 				847DAABA2293EEF100351AD7 /* libmpv.1.dylib */,
 				847DAABE2293EEF100351AD7 /* libnettle.6.dylib */,
