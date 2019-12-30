@@ -232,7 +232,6 @@ struct Preference {
 
     /** Whether catch media keys event (bool) */
     static let useMediaKeys = Key("useMediaKeys")
-    static let useAppleRemote = Key("useAppleRemote")
 
     /** User created input config list (dic) */
     static let inputConfigs = Key("inputConfigs")
@@ -673,7 +672,6 @@ struct Preference {
     .showChapterPos: false,
     .resumeLastPosition: true,
     .useMediaKeys: true,
-    .useAppleRemote: false,
     .alwaysFloatOnTop: false,
     .blackOutMonitor: false,
     .pauseWhenMinimized: false,

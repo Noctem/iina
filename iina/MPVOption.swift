@@ -686,8 +686,6 @@ struct MPVOption {
     static let noInputTerminal = "no-input-terminal"
     /** --input-ipc-server=<filename> */
     static let inputIpcServer = "input-ipc-server"
-    /** --input-appleremote=<yes|no> */
-    static let inputAppleremote = "input-appleremote"
     /** --input-cursor */
     static let inputCursor = "input-cursor"
     /** --no-input-cursor */
