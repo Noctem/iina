@@ -147,11 +147,9 @@ class MPVController: NSObject {
 
     setUserOption(PK.screenshotTemplate, type: .string, forName: MPVOption.Screenshot.screenshotTemplate)
 
-    if #available(macOS 10.13, *) {
-      chkErr(mpv_set_option_string(mpv, MPVOption.Input.inputMediaKeys, no_str))
-    } else {
-      setUserOption(PK.useMediaKeys, type: .bool, forName: MPVOption.Input.inputMediaKeys)
-    }
+    // Disable mpv's media key system as it now uses the MediaPlayer Framework.
+    // Dropped media key support in 10.11 and 10.12.
+    chkErr(mpv_set_option_string(mpv, MPVOption.Input.inputMediaKeys, no_str))
 
     setUserOption(PK.keepOpenOnFileEnd, type: .other, forName: MPVOption.Window.keepOpen) { key in
       let keepOpen = Preference.bool(for: PK.keepOpenOnFileEnd)
@@ -253,6 +251,9 @@ class MPVController: NSObject {
       return Preference.bool(for: key) ? nil : "no"
     }
 
+    setUserOption(PK.defaultCacheSize, type: .other, forName: MPVOption.Demuxer.demuxerMaxBytes) { key in
+      return "\(Preference.integer(for: key))KiB"
+    }
     setUserOption(PK.secPrefech, type: .int, forName: MPVOption.Cache.cacheSecs)
 
     setUserOption(PK.userAgent, type: .other, forName: MPVOption.Network.userAgent) { key in
@@ -526,7 +527,7 @@ class MPVController: NSObject {
     mpv_get_property(mpv, name, MPV_FORMAT_NODE, &node)
     let parsed = try? MPVNode.parse(node)
     mpv_free_node_contents(&node)
-    return parsed!
+    return parsed
   }
 
   // MARK: - Hooks
@@ -737,6 +738,7 @@ class MPVController: NSObject {
 
     case MPVOption.TrackSelection.aid:
       player.info.aid = Int(getInt(MPVOption.TrackSelection.aid))
+      guard player.mainWindow.loaded else { break }
       DispatchQueue.main.sync {
         player.mainWindow?.muteButton.isEnabled = (player.info.aid != 0)
         player.mainWindow?.volumeSlider.isEnabled = (player.info.aid != 0)

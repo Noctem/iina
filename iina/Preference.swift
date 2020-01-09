@@ -195,6 +195,8 @@ struct Preference {
     // Network
 
     static let enableCache = Key("enableCache")
+    static let defaultCacheSize = Key("defaultCacheSize")
+    static let cacheBufferSize = Key("cacheBufferSize")
     static let secPrefech = Key("secPrefech")
     static let userAgent = Key("userAgent")
     static let transportRTSPThrough = Key("transportRTSPThrough")
@@ -232,6 +234,7 @@ struct Preference {
 
     /** Whether catch media keys event (bool) */
     static let useMediaKeys = Key("useMediaKeys")
+    static let useAppleRemote = Key("useAppleRemote")
 
     /** User created input config list (dic) */
     static let inputConfigs = Key("inputConfigs")
@@ -672,6 +675,7 @@ struct Preference {
     .showChapterPos: false,
     .resumeLastPosition: true,
     .useMediaKeys: true,
+    .useAppleRemote: false,
     .alwaysFloatOnTop: false,
     .blackOutMonitor: false,
     .pauseWhenMinimized: false,
@@ -746,6 +750,8 @@ struct Preference {
     .autoSearchThreshold: 20,
 
     .enableCache: true,
+    .defaultCacheSize: 153600,
+    .cacheBufferSize: 153600,
     .secPrefech: 36000,
     .userAgent: "",
     .transportRTSPThrough: RTSPTransportation.tcp.rawValue,
