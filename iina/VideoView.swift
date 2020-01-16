@@ -207,8 +207,7 @@ class VideoView: NSView {
       actualFps = 60;
     }
     player.mpv.setDouble(MPVOption.Video.displayFps, actualFps)
-    
-    setICCProfile(displayId)
+
     currentDisplay = displayId
   }
 
