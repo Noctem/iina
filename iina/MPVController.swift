@@ -9,8 +9,6 @@
 import Cocoa
 import Foundation
 
-fileprivate typealias PK = Preference.Key
-
 fileprivate let yes_str = "yes"
 fileprivate let no_str = "no"
 
@@ -687,7 +685,9 @@ class MPVController: NSObject {
     player.info.displayHeight = 0
     player.info.videoDuration = VideoTime(duration)
     if let filename = getString(MPVProperty.path) {
-      player.info.cachedVideoDurationAndProgress[filename]?.duration = duration
+      player.info.infoQueue.async {
+        self.player.info.cachedVideoDurationAndProgress[filename]?.duration = duration
+      }
     }
     player.info.videoPosition = VideoTime(pos)
     player.fileLoaded()
@@ -715,7 +715,9 @@ class MPVController: NSObject {
       // video size changed
       player.info.displayWidth = dwidth
       player.info.displayHeight = dheight
-      player.notifyMainWindowVideoSizeChanged()
+      DispatchQueue.main.sync {
+        player.notifyMainWindowVideoSizeChanged()
+      }
     }
   }
 
@@ -772,10 +774,14 @@ class MPVController: NSObject {
       player.syncUI(.playButton)
 
     case MPVProperty.chapter:
-      player.info.chapter = Int(getInt(MPVProperty.chapter))
+      let index = Int(getInt(MPVProperty.chapter))
+      player.info.chapter = index
       player.syncUI(.time)
       player.syncUI(.chapterList)
       player.postNotification(.iinaMediaTitleChanged)
+      if let chapter = player.info.chapters[at: index] {
+        player.sendOSD(.chapter(chapter.title))
+      }
 
     case MPVOption.PlaybackControl.speed:
       needReloadQuickSettingsView = true
