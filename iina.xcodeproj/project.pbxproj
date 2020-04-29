@@ -98,7 +98,7 @@
 		847DAAEA2293EEF400351AD7 /* libmpv.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAABA2293EEF100351AD7 /* libmpv.1.dylib */; };
 		847DAAEC2293EEF400351AD7 /* libharfbuzz.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAABC2293EEF100351AD7 /* libharfbuzz.0.dylib */; };
 		847DAAEE2293EEF400351AD7 /* libnettle.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAABE2293EEF100351AD7 /* libnettle.6.dylib */; };
-		847DAAEF2293EEF400351AD7 /* libffi.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAABF2293EEF100351AD7 /* libffi.6.dylib */; };
+		847DAAEF2293EEF400351AD7 /* libffi.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAABF2293EEF100351AD7 /* libffi.7.dylib */; };
 		847DAAF12293EEF400351AD7 /* libbluray.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAAC12293EEF100351AD7 /* libbluray.2.dylib */; };
 		847DAAF22293EEF400351AD7 /* libass.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAAC22293EEF100351AD7 /* libass.9.dylib */; };
 		847DAAF32293EEF400351AD7 /* libavfilter.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 847DAAC32293EEF100351AD7 /* libavfilter.7.dylib */; };
@@ -140,7 +140,7 @@
 		847DAB1D2293EEFD00351AD7 /* libavutil.56.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAAD52293EEF300351AD7 /* libavutil.56.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		847DAB1E2293EEFD00351AD7 /* libbluray.2.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAAC12293EEF100351AD7 /* libbluray.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		847DAB1F2293EEFD00351AD7 /* libcrypto.1.1.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAAE32293EEF400351AD7 /* libcrypto.1.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		847DAB202293EEFD00351AD7 /* libffi.6.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAABF2293EEF100351AD7 /* libffi.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		847DAB202293EEFD00351AD7 /* libffi.7.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAABF2293EEF100351AD7 /* libffi.7.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		847DAB212293EEFD00351AD7 /* libfontconfig.1.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAADE2293EEF400351AD7 /* libfontconfig.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		847DAB222293EEFD00351AD7 /* libfreetype.6.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAAB82293EEF100351AD7 /* libfreetype.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		847DAB232293EEFD00351AD7 /* libfribidi.0.dylib in Copy Dylibs */ = {isa = PBXBuildFile; fileRef = 847DAACB2293EEF200351AD7 /* libfribidi.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -343,7 +343,7 @@
 				847DAB342293EEFD00351AD7 /* libp11-kit.0.dylib in Copy Dylibs */,
 				847DAB2A2293EEFD00351AD7 /* libhogweed.4.dylib in Copy Dylibs */,
 				847DAB392293EEFD00351AD7 /* librubberband.2.dylib in Copy Dylibs */,
-				847DAB202293EEFD00351AD7 /* libffi.6.dylib in Copy Dylibs */,
+				847DAB202293EEFD00351AD7 /* libffi.7.dylib in Copy Dylibs */,
 				847DAB182293EEFD00351AD7 /* libavcodec.58.dylib in Copy Dylibs */,
 				847DAB352293EEFD00351AD7 /* libpcre.1.dylib in Copy Dylibs */,
 				847DAB282293EEFD00351AD7 /* libgraphite2.3.dylib in Copy Dylibs */,
@@ -844,7 +844,7 @@
 		847DAABA2293EEF100351AD7 /* libmpv.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmpv.1.dylib; path = deps/lib/libmpv.1.dylib; sourceTree = "<group>"; };
 		847DAABC2293EEF100351AD7 /* libharfbuzz.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libharfbuzz.0.dylib; path = deps/lib/libharfbuzz.0.dylib; sourceTree = "<group>"; };
 		847DAABE2293EEF100351AD7 /* libnettle.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnettle.6.dylib; path = deps/lib/libnettle.6.dylib; sourceTree = "<group>"; };
-		847DAABF2293EEF100351AD7 /* libffi.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libffi.6.dylib; path = deps/lib/libffi.6.dylib; sourceTree = "<group>"; };
+		847DAABF2293EEF100351AD7 /* libffi.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libffi.7.dylib; path = deps/lib/libffi.7.dylib; sourceTree = "<group>"; };
 		847DAAC12293EEF100351AD7 /* libbluray.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbluray.2.dylib; path = deps/lib/libbluray.2.dylib; sourceTree = "<group>"; };
 		847DAAC22293EEF100351AD7 /* libass.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libass.9.dylib; path = deps/lib/libass.9.dylib; sourceTree = "<group>"; };
 		847DAAC32293EEF100351AD7 /* libavfilter.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libavfilter.7.dylib; path = deps/lib/libavfilter.7.dylib; sourceTree = "<group>"; };
@@ -1477,7 +1477,7 @@
 				847DAB112293EEF400351AD7 /* libuchardet.0.dylib in Frameworks */,
 				631241A322A273E6005C7DD1 /* libidn2.0.dylib in Frameworks */,
 				847DAB062293EEF400351AD7 /* libgraphite2.3.dylib in Frameworks */,
-				847DAAEF2293EEF400351AD7 /* libffi.6.dylib in Frameworks */,
+				847DAAEF2293EEF400351AD7 /* libffi.7.dylib in Frameworks */,
 				847DAB092293EEF400351AD7 /* libssl.1.1.dylib in Frameworks */,
 				847DAB002293EEF400351AD7 /* libgnutls.30.dylib in Frameworks */,
 				847DAB0B2293EEF400351AD7 /* liblzma.5.dylib in Frameworks */,
@@ -1610,7 +1610,7 @@
 				847DAAD52293EEF300351AD7 /* libavutil.56.dylib */,
 				847DAAC12293EEF100351AD7 /* libbluray.2.dylib */,
 				847DAAE32293EEF400351AD7 /* libcrypto.1.1.dylib */,
-				847DAABF2293EEF100351AD7 /* libffi.6.dylib */,
+				847DAABF2293EEF100351AD7 /* libffi.7.dylib */,
 				847DAADE2293EEF400351AD7 /* libfontconfig.1.dylib */,
 				847DAAB82293EEF100351AD7 /* libfreetype.6.dylib */,
 				847DAACB2293EEF200351AD7 /* libfribidi.0.dylib */,
@@ -3495,7 +3495,6 @@
 				CODE_SIGN_ENTITLEMENTS = OpenInIINA/OpenInIINA.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OpenInIINA/Info.plist;
@@ -3523,7 +3522,6 @@
 				CODE_SIGN_ENTITLEMENTS = OpenInIINA/OpenInIINA.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OpenInIINA/Info.plist;
@@ -3667,7 +3665,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3711,7 +3708,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3751,7 +3747,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
@@ -3775,7 +3770,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
