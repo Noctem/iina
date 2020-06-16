@@ -66,6 +66,7 @@ class MPVController: NSObject {
     MPVOption.PlaybackControl.pause: MPV_FORMAT_FLAG,
     MPVProperty.chapter: MPV_FORMAT_INT64,
     MPVOption.Video.deinterlace: MPV_FORMAT_FLAG,
+    MPVOption.Video.hwdec: MPV_FORMAT_STRING,
     MPVOption.Audio.mute: MPV_FORMAT_FLAG,
     MPVOption.Audio.volume: MPV_FORMAT_DOUBLE,
     MPVOption.Audio.audioDelay: MPV_FORMAT_DOUBLE,
@@ -462,14 +463,14 @@ class MPVController: NSObject {
     return str
   }
 
-  func getScreenshot(_ arg: String) -> NSImage {
+  func getScreenshot(_ arg: String) -> NSImage? {
     var args = try! MPVNode.create(["screenshot-raw", arg])
     defer {
       MPVNode.free(args)
     }
     var result = mpv_node()
     mpv_command_node(self.mpv, &args, &result)
-    let rawImage = try! MPVNode.parse(result) as! [String: Any]
+    guard let rawImage = try? MPVNode.parse(result) as? [String: Any] else { return nil }
     mpv_free_node_contents(&result)
     var pixelArray = rawImage["data"] as! [UInt8]
     // According to mpv's client.h, the pixel array mpv returns arrange
@@ -685,7 +686,7 @@ class MPVController: NSObject {
     player.info.displayHeight = 0
     player.info.videoDuration = VideoTime(duration)
     if let filename = getString(MPVProperty.path) {
-      player.info.infoQueue.async {
+      player.playlistQueue.async {
         self.player.info.cachedVideoDurationAndProgress[filename]?.duration = duration
       }
     }
@@ -774,14 +775,10 @@ class MPVController: NSObject {
       player.syncUI(.playButton)
 
     case MPVProperty.chapter:
-      let index = Int(getInt(MPVProperty.chapter))
-      player.info.chapter = index
+      player.info.chapter = Int(getInt(MPVProperty.chapter))
       player.syncUI(.time)
       player.syncUI(.chapterList)
       player.postNotification(.iinaMediaTitleChanged)
-      if let chapter = player.info.chapters[at: index] {
-        player.sendOSD(.chapter(chapter.title))
-      }
 
     case MPVOption.PlaybackControl.speed:
       needReloadQuickSettingsView = true
@@ -795,9 +792,17 @@ class MPVController: NSObject {
       if let data = UnsafePointer<Bool>(OpaquePointer(property.data))?.pointee {
         // this property will fire a change event at file start
         if player.info.deinterlace != data {
-          player.sendOSD(.deinterlace(data))
           player.info.deinterlace = data
+          player.sendOSD(.deinterlace(data))
         }
+      }
+
+    case MPVOption.Video.hwdec:
+      needReloadQuickSettingsView = true
+      let data = String(cString: property.data.assumingMemoryBound(to: UnsafePointer<UInt8>.self).pointee)
+      if player.info.hwdec != data {
+        player.info.hwdec = data
+        player.sendOSD(.hwdec(player.info.hwdecEnabled))
       }
 
     case MPVOption.Audio.mute:

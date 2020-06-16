@@ -64,7 +64,7 @@ class PlayerWindowController: NSWindowController, NSWindowDelegate {
     switch keyPath {
     case PK.themeMaterial.rawValue:
       if let newValue = change[.newKey] as? Int {
-        setMaterial(Preference.Theme(rawValue: newValue) ?? .system)
+        setMaterial(Preference.Theme(rawValue: newValue))
       }
     case PK.showRemainingTime.rawValue:
       if let newValue = change[.newKey] as? Bool {
@@ -113,7 +113,7 @@ class PlayerWindowController: NSWindowController, NSWindowDelegate {
   @IBOutlet weak var playButton: NSButton!
   @IBOutlet weak var playSlider: NSSlider!
   @IBOutlet weak var rightLabel: DurationDisplayTextField!
-  @IBOutlet weak var leftLabel: NSTextField!
+  @IBOutlet weak var leftLabel: DurationDisplayTextField!
 
   /** Differentiate between single clicks and double clicks. */
   internal var singleClickTimer: Timer?
@@ -141,6 +141,8 @@ class PlayerWindowController: NSWindowController, NSWindowDelegate {
   internal var seekOverride = false
   internal var volumeOverride = false
 
+  internal var mouseActionDisabledViews: [NSView?] {[]}
+
   // MARK: - Initiaization
 
   override func windowDidLoad() {
@@ -163,7 +165,8 @@ class PlayerWindowController: NSWindowController, NSWindowDelegate {
     addObserver(to: .default, forName: .iinaMediaTitleChanged, object: player) { [unowned self] _ in
         self.updateTitle()
     }
-    
+
+    leftLabel.mode = .current
     rightLabel.mode = Preference.bool(for: .showRemainingTime) ? .remaining : .duration
     
     updateVolume()
@@ -195,8 +198,8 @@ class PlayerWindowController: NSWindowController, NSWindowDelegate {
     notificationCenter.addObserver(forName: name, object: object, queue: .main, using: block)
   }
 
-  internal func setMaterial(_ theme: Preference.Theme) {
-    guard let window = window else { return }
+  internal func setMaterial(_ theme: Preference.Theme?) {
+    guard let window = window, let theme = theme else { return }
 
     if #available(macOS 10.14, *) {
       window.appearance = NSAppearance(iinaTheme: theme)
@@ -248,6 +251,7 @@ class PlayerWindowController: NSWindowController, NSWindowDelegate {
   }
 
   override func mouseUp(with event: NSEvent) {
+    guard !isMouseEvent(event, inAnyOf: mouseActionDisabledViews) else { return }
     if event.clickCount == 1 {
       if doubleClickAction == .none {
         performMouseAction(singleClickAction)
@@ -265,10 +269,12 @@ class PlayerWindowController: NSWindowController, NSWindowDelegate {
   }
   
   override func rightMouseUp(with event: NSEvent) {
+    guard !isMouseEvent(event, inAnyOf: mouseActionDisabledViews) else { return }
     performMouseAction(Preference.enum(for: .rightClickAction))
   }
   
   override func otherMouseUp(with event: NSEvent) {
+    guard !isMouseEvent(event, inAnyOf: mouseActionDisabledViews) else { return }
     if event.type == .otherMouseUp {
       performMouseAction(Preference.enum(for: .middleClickAction))
     } else {
@@ -421,14 +427,15 @@ class PlayerWindowController: NSWindowController, NSWindowDelegate {
     guard let duration = player.info.videoDuration, let pos = player.info.videoPosition else {
       Logger.fatal("video info not available")
     }
-    let percentage = (pos.second / duration.second) * 100
-    leftLabel.stringValue = pos.stringRepresentation
-    rightLabel.updateText(with: duration, given: pos)
+    [leftLabel, rightLabel].forEach { $0.updateText(with: duration, given: pos) }
+    if #available(macOS 10.12.2, *) {
+      player.touchBarSupport.touchBarPosLabels.forEach { $0.updateText(with: duration, given: pos) }
+    }
     if andProgressBar {
+      let percentage = (pos.second / duration.second) * 100
       playSlider.doubleValue = percentage
       if #available(macOS 10.12.2, *) {
         player.touchBarSupport.touchBarPlaySlider?.setDoubleValueSafely(percentage)
-        player.touchBarSupport.touchBarPosLabels.forEach { $0.updateText(with: duration, given: pos) }
       }
     }
   }

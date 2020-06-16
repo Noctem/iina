@@ -83,6 +83,7 @@ class PlaybackInfo {
   var justStartedFile: Bool = false
   var justOpenedFile: Bool = false
   var shouldAutoLoadFiles: Bool = false
+  var isMatchingSubtitles = false
   var disableOSDForFileLoading: Bool = false
 
   /** The current applied aspect, used for find current aspect in menu, etc. Maybe not a good approach. */
@@ -95,6 +96,10 @@ class PlaybackInfo {
   var delogoFilter: MPVFilter?
 
   var deinterlace: Bool = false
+  var hwdec: String = "no"
+  var hwdecEnabled: Bool {
+    hwdec != "no"
+  }
 
   // video equalizer
   var brightness: Int = 0
@@ -183,10 +188,6 @@ class PlaybackInfo {
   var currentSubsInfo: [FileInfo] = []
   var currentVideosInfo: [FileInfo] = []
   var cachedVideoDurationAndProgress: [String: (duration: Double?, progress: Double?)] = [:]
-  
-  // Dictionary and other containers in Swift is not thread-safe, make sure to guard them
-  // TODO: Guard other properties if needed
-  let infoQueue = DispatchQueue(label: "IINAPlaybackInfo")
 
   var thumbnailsReady = false
   var thumbnailsProgress: Double = 0

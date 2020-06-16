@@ -57,6 +57,8 @@ class MiniPlayerWindowController: PlayerWindowController, NSPopoverDelegate {
 
   private var originalWindowFrame: NSRect!
 
+  override var mouseActionDisabledViews: [NSView?] {[backgroundView, playlistWrapperView] as [NSView?]}
+
   // MARK: - Initialization
 
   override func windowDidLoad() {
@@ -115,19 +117,21 @@ class MiniPlayerWindowController: PlayerWindowController, NSPopoverDelegate {
     volumePopover.delegate = self
   }
 
-  override internal func setMaterial(_ theme: Preference.Theme) {
-    guard let window = window else { return }
-
-    if #available(macOS 10.14, *) {} else {
-      let (appearance, material) = Utility.getAppearanceAndMaterial(from: theme)
-
-      [backgroundView, closeButtonBackgroundViewVE, playlistWrapperView].forEach {
-        $0?.appearance = appearance
-        $0?.material = material
-      }
-
-      window.appearance = appearance
+  override internal func setMaterial(_ theme: Preference.Theme?) {
+    if #available(macOS 10.14, *) {
+      super.setMaterial(theme)
+      return
     }
+    guard let window = window, let theme = theme else { return }
+
+    let (appearance, material) = Utility.getAppearanceAndMaterial(from: theme)
+
+    [backgroundView, closeButtonBackgroundViewVE, playlistWrapperView].forEach {
+      $0?.appearance = appearance
+      $0?.material = material
+    }
+
+    window.appearance = appearance
   }
 
   // MARK: - Mouse / Trackpad events
@@ -135,21 +139,6 @@ class MiniPlayerWindowController: PlayerWindowController, NSPopoverDelegate {
   override func mouseDown(with event: NSEvent) {
     window?.makeFirstResponder(window)
     super.mouseDown(with: event)
-  }
-
-  override func mouseUp(with event: NSEvent) {
-    guard !isMouseEvent(event, inAnyOf: [backgroundView]) else { return }
-    super.mouseUp(with: event)
-  }
-
-  override func rightMouseUp(with event: NSEvent) {
-    guard !isMouseEvent(event, inAnyOf: [backgroundView]) else { return }
-    super.rightMouseUp(with: event)
-  }
-
-  override func otherMouseUp(with event: NSEvent) {
-    guard !isMouseEvent(event, inAnyOf: [backgroundView]) else { return }
-    super.otherMouseUp(with: event)
   }
 
   override func scrollWheel(with event: NSEvent) {
@@ -181,7 +170,10 @@ class MiniPlayerWindowController: PlayerWindowController, NSPopoverDelegate {
   func windowWillClose(_ notification: Notification) {
     player.switchedToMiniPlayerManually = false
     player.switchedBackFromMiniPlayerManually = false
-    player.switchBackFromMiniPlayer(automatically: true, showMainWindow: false)
+    if !player.isMpvTerminated {
+      // not needed if called when terminating the whole app
+      player.switchBackFromMiniPlayer(automatically: true, showMainWindow: false)
+    }
     player.mainWindow.close()
   }
 
