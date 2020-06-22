@@ -760,13 +760,13 @@ class MPVController: NSObject {
 
     case MPVOption.PlaybackControl.pause:
       if let paused = UnsafePointer<Bool>(OpaquePointer(property.data))?.pointee {
-        if player.info.isPaused != paused {
-          player.sendOSD(paused ? .pause : .resume)
-          player.info.isPaused = paused
-        }
-        if player.mainWindow.loaded {
-          if Preference.bool(for: .alwaysFloatOnTop) {
-            DispatchQueue.main.async {
+        DispatchQueue.main.sync {
+          if player.info.isPaused != paused {
+            player.sendOSD(paused ? .pause : .resume)
+            player.info.isPaused = paused
+          }
+          if player.mainWindow.loaded {
+            if Preference.bool(for: .alwaysFloatOnTop) {
               self.player.mainWindow.setWindowFloatingOnTop(!paused)
             }
           }
