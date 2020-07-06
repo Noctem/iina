@@ -49,7 +49,9 @@ class MiniPlayerWindowController: PlayerWindowController, NSPopoverDelegate {
   @IBOutlet weak var artistAlbumLabel: ScrollingTextField!
   @IBOutlet weak var volumeLabel: NSTextField!
   @IBOutlet weak var defaultAlbumArt: NSView!
-
+  @IBOutlet weak var togglePlaylistButton: NSButton!
+  @IBOutlet weak var toggleAlbumArtButton: NSButton!
+  
   var isPlaylistVisible = false
   var isVideoVisible = true
 
@@ -109,6 +111,13 @@ class MiniPlayerWindowController: PlayerWindowController, NSPopoverDelegate {
 
     // switching UI
     controlView.alphaValue = 0
+    
+    // tool tips
+    togglePlaylistButton.toolTip = Preference.ToolBarButton.playlist.description()
+    toggleAlbumArtButton.toolTip = NSLocalizedString("mini_player.album_art", comment: "album_art")
+    volumeButton.toolTip = NSLocalizedString("mini_player.volume", comment: "volume")
+    closeButtonVE.toolTip = NSLocalizedString("mini_player.close", comment: "close")
+    backButtonVE.toolTip = NSLocalizedString("mini_player.back", comment: "back")
 
     if Preference.bool(for: .alwaysFloatOnTop) {
       setWindowFloatingOnTop(true)
@@ -265,7 +274,22 @@ class MiniPlayerWindowController: PlayerWindowController, NSPopoverDelegate {
     guard loaded else { return }
     super.updateVolume()
     volumeLabel.intValue = Int32(player.info.volume)
-    volumeButton.image = player.info.isMuted ? NSImage(named: "mute") : NSImage(named: "volume")
+    if player.info.isMuted {
+      volumeButton.image = NSImage(named: "mute")
+    } else {
+      switch volumeLabel.intValue {
+        case 0:
+          volumeButton.image = NSImage(named: "volume-0")
+        case 1...33:
+          volumeButton.image = NSImage(named: "volume-1")
+        case 34...66:
+          volumeButton.image = NSImage(named: "volume-2")
+        case 67...1000:
+          volumeButton.image = NSImage(named: "volume")
+        default:
+          break
+      }
+    }
   }
 
   func updateVideoSize() {

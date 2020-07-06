@@ -709,7 +709,7 @@
                                                                                     <constraint firstAttribute="height" constant="36" id="06s-6F-ftM"/>
                                                                                 </constraints>
                                                                                 <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Deinterlace"/>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="quicksetting.deinterlace"/>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hasBackground" value="YES"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </customView>
@@ -722,7 +722,7 @@
                                                                                     <constraint firstAttribute="height" constant="36" id="U7r-jZ-xhE"/>
                                                                                 </constraints>
                                                                                 <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Hardware Decoding"/>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="quicksetting.hwdec"/>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hasBackground" value="YES"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </customView>
@@ -795,7 +795,7 @@
                                                                 <constraint firstItem="ItN-JT-puN" firstAttribute="centerY" secondItem="dsX-c1-BZP" secondAttribute="centerY" id="SAV-G5-5wL"/>
                                                                 <constraint firstItem="g3A-4u-nNt" firstAttribute="top" secondItem="8ZJ-PD-t0R" secondAttribute="bottom" constant="7" id="SKe-RW-aSJ"/>
                                                                 <constraint firstItem="Cec-wN-J62" firstAttribute="centerY" secondItem="SL7-DZ-5ff" secondAttribute="centerY" id="SbN-O3-hQF"/>
-                                                                <constraint firstItem="8ZJ-PD-t0R" firstAttribute="top" secondItem="rsV-qL-l7b" secondAttribute="bottom" constant="20" id="SsM-RU-d20"/>
+                                                                <constraint firstItem="8ZJ-PD-t0R" firstAttribute="top" secondItem="ykw-rb-M9D" secondAttribute="bottom" constant="20" id="SsM-RU-d20"/>
                                                                 <constraint firstItem="8Uj-eX-hSm" firstAttribute="leading" secondItem="5v4-Te-950" secondAttribute="leading" constant="20" id="T08-gr-bMl"/>
                                                                 <constraint firstItem="mjX-Jf-925" firstAttribute="trailing" secondItem="UWh-M9-5Nw" secondAttribute="trailing" id="Tfz-E0-gcH"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7vv-En-VYY" secondAttribute="trailing" constant="35" id="UG0-YC-mdd"/>
@@ -1449,7 +1449,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="823"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="epy-wp-Ja5">
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="823"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="pm4-x9-WJ5" customClass="FlippedView" customModule="IINA" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="-2" width="360" height="825"/>
@@ -1461,7 +1461,7 @@
                                                                     <rect key="frame" x="0.0" y="301" width="360" height="72"/>
                                                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="dJV-R0-O3M">
                                                                         <rect key="frame" x="0.0" y="0.0" width="360" height="72"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="2vU-hm-gGB">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="360" height="72"/>
@@ -1596,7 +1596,7 @@
                                                                     <rect key="frame" x="0.0" y="185" width="360" height="72"/>
                                                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="EKn-MX-Fao">
                                                                         <rect key="frame" x="0.0" y="0.0" width="360" height="72"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="Jve-qX-Agy">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="360" height="72"/>

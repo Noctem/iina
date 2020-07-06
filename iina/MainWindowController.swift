@@ -387,8 +387,6 @@ class MainWindowController: PlayerWindowController {
   @IBOutlet weak var fragControlViewMiddleButtons1Constraint: NSLayoutConstraint!
   @IBOutlet weak var fragControlViewMiddleButtons2Constraint: NSLayoutConstraint!
 
-  var osdProgressBarWidthConstraint: NSLayoutConstraint!
-
   @IBOutlet weak var titleBarView: NSVisualEffectView!
   @IBOutlet weak var titleBarBottomBorder: NSBox!
   @IBOutlet weak var titlebarOnTopButton: NSButton!
@@ -429,7 +427,6 @@ class MainWindowController: PlayerWindowController {
   @IBOutlet weak var osdVisualEffectView: NSVisualEffectView!
   @IBOutlet weak var osdStackView: NSStackView!
   @IBOutlet weak var osdLabel: NSTextField!
-  @IBOutlet weak var osdAccessoryView: NSView!
   @IBOutlet weak var osdAccessoryText: NSTextField!
   @IBOutlet weak var osdAccessoryProgress: NSProgressIndicator!
 
@@ -542,8 +539,6 @@ class MainWindowController: PlayerWindowController {
     bottomView.isHidden = true
     pipOverlayView.isHidden = true
 
-    osdProgressBarWidthConstraint = NSLayoutConstraint(item: osdAccessoryProgress as Any, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 150)
-
     // add user default observers
     observedPrefKeys.append(contentsOf: localObservedPrefKeys)
     observedPrefKeys.forEach { key in
@@ -619,6 +614,7 @@ class MainWindowController: PlayerWindowController {
       button.tag = buttonType.rawValue
       button.translatesAutoresizingMaskIntoConstraints = false
       button.refusesFirstResponder = true
+      button.toolTip = buttonType.description()
       let buttonWidth = buttons.count == 5 ? "20" : "24"
       Utility.quickConstraints(["H:[btn(\(buttonWidth))]", "V:[btn(24)]"], ["btn": button])
       fragToolbarView.addView(button, in: .trailing)
@@ -836,6 +832,10 @@ class MainWindowController: PlayerWindowController {
       toggleWindowFullScreen()
     case .hideOSC:
       hideUI()
+    case .togglePIP:
+      if #available(macOS 10.12, *) {
+        menuTogglePIP(.dummy)
+      }
     default:
       break
     }
@@ -1563,25 +1563,23 @@ class MainWindowController: PlayerWindowController {
       hideOSDTimer = nil
     }
     osdAnimationState = .shown
-    [osdAccessoryText, osdAccessoryProgress].forEach { $0.isHidden = true }
 
     let (osdString, osdType) = message.message()
 
     let osdTextSize = Preference.float(for: .osdTextSize)
     osdLabel.font = NSFont.monospacedDigitSystemFont(ofSize: CGFloat(osdTextSize), weight: .regular)
+    osdAccessoryText.font = NSFont.monospacedDigitSystemFont(ofSize: CGFloat(osdTextSize * 0.5).clamped(to: 11...25), weight: .regular)
     osdLabel.stringValue = osdString
 
     switch osdType {
     case .normal:
-      osdStackView.setVisibilityPriority(.notVisible, for: osdAccessoryView)
+      osdStackView.setVisibilityPriority(.notVisible, for: osdAccessoryText)
+      osdStackView.setVisibilityPriority(.notVisible, for: osdAccessoryProgress)
     case .withProgress(let value):
-      NSLayoutConstraint.activate([osdProgressBarWidthConstraint])
-      osdStackView.setVisibilityPriority(.mustHold, for: osdAccessoryView)
-      osdAccessoryProgress.isHidden = false
+      osdStackView.setVisibilityPriority(.notVisible, for: osdAccessoryText)
+      osdStackView.setVisibilityPriority(.mustHold, for: osdAccessoryProgress)
       osdAccessoryProgress.doubleValue = value
     case .withText(let text):
-      NSLayoutConstraint.deactivate([osdProgressBarWidthConstraint])
-
       // data for mustache redering
       let osdData: [String: String] = [
         "duration": player.info.videoDuration?.stringRepresentation ?? Constants.String.videoTimePlaceholder,
@@ -1590,8 +1588,8 @@ class MainWindowController: PlayerWindowController {
         "chapterCount": player.info.chapters.count.description
       ]
 
-      osdStackView.setVisibilityPriority(.mustHold, for: osdAccessoryView)
-      osdAccessoryText.isHidden = false
+      osdStackView.setVisibilityPriority(.mustHold, for: osdAccessoryText)
+      osdStackView.setVisibilityPriority(.notVisible, for: osdAccessoryProgress)
       osdAccessoryText.stringValue = try! (try! Template(string: text)).render(osdData)
     }
 
@@ -2499,7 +2497,8 @@ extension MainWindowController: PIPViewControllerDelegate {
     // animation. By forcing a redraw it will keep its paused image throughout.
     // (At least) in 10.15, presentAsPictureInPicture: behaves asynchronously.
     // Therefore we should wait until the view is moved to the PIP superview.
-    if player.info.isPaused || player.info.currentTrack(.video)?.isAlbumart ?? false {
+    let currentTrackIsAlbumArt = player.info.currentTrack(.video)?.isAlbumart ?? false
+    if player.info.isPaused || currentTrackIsAlbumArt {
       videoView.pendingRedrawAfterEnteringPIP = true
     }
 
@@ -2548,7 +2547,8 @@ extension MainWindowController: PIPViewControllerDelegate {
     // are paused, because this causes a janky animation in either case but as
     // it's not necessary while the video is playing and significantly more
     // noticeable, we only redraw if we are paused.
-    if player.info.isPaused || player.info.currentTrack(.video)?.isAlbumart ?? false {
+    let currentTrackIsAlbumArt = player.info.currentTrack(.video)?.isAlbumart ?? false
+    if player.info.isPaused || currentTrackIsAlbumArt {
       videoView.videoLayer.draw(forced: true)
     }
 

@@ -90,6 +90,8 @@
 "preference.key_binding_hint_1" = "To edit key bindings in current configuration file, click \"Duplicate…\" button first to create a copy.";
 "preference.key_binding_hint_2" = "Double click a row at the right side to edit the corresponding key binding.";
 
+"preference.enable_adv_settings" = "Enable advanced settings";
+
 "menu.volume" = "Volume: %d";
 "menu.audio_delay" = "Audio Delay: %.2fs";
 "menu.sub_delay" = "Subtitle Delay: %.2fs";
@@ -259,6 +261,16 @@
 "osc_toolbar.full_screen" = "Toggle full screen";
 "osc_toolbar.music_mode" = "Enter music mode";
 "osc_toolbar.sub_track" = "Choose subtitle track";
+
+"mini_player.album_art" = "Toggle album art";
+"mini_player.loop" = "Repeat";
+"mini_player.shuffle" = "Shuffle";
+"mini_player.remove" = "Remove from playlist";
+"mini_player.add" = "Add to playlist";
+"mini_player.delete" = "Delete all tracks from playlist";
+"mini_player.volume" = "Volume";
+"mini_player.close" = "Close music mode";
+"mini_player.back" = "Return to video mode";
 
 // Touch bar
 
