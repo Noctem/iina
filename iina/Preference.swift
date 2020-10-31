@@ -91,6 +91,7 @@ struct Preference {
     static let screenshotIncludeSubtitle = Key("screenShotIncludeSubtitle")
     static let screenshotFormat = Key("screenShotFormat")
     static let screenshotTemplate = Key("screenShotTemplate")
+    static let screenshotShowPreview = Key("screenshotShowPreview")
 
     static let playlistAutoAdd = Key("playlistAutoAdd")
     static let playlistAutoPlayNext = Key("playlistAutoPlayNext")
@@ -146,6 +147,7 @@ struct Preference {
 
     static let videoThreads = Key("videoThreads")
     static let hardwareDecoder = Key("hardwareDecoder")
+    static let forceDedicatedGPU = Key("forceDedicatedGPU")
 
     static let audioThreads = Key("audioThreads")
     static let audioLanguage = Key("audioLanguage")
@@ -231,6 +233,7 @@ struct Preference {
     static let forceTouchAction = Key("forceTouchAction")
 
     static let showRemainingTime = Key("showRemainingTime")
+    static let timeDisplayPrecision = Key("timeDisplayPrecision")
     static let touchbarShowRemainingTime = Key("touchbarShowRemainingTime")
 
     static let followGlobalSeekTypeWhenAdjustSlider = Key("followGlobalSeekTypeWhenAdjustSlider")
@@ -701,6 +704,7 @@ struct Preference {
     .resizeWindowTiming: ResizeWindowTiming.onlyWhenOpen.rawValue,
     .resizeWindowOption: ResizeWindowOption.videoSize10.rawValue,
     .showRemainingTime: false,
+    .timeDisplayPrecision: 0,
     .touchbarShowRemainingTime: true,
     .enableThumbnailPreview: true,
     .maxThumbnailPreviewCacheSize: 500,
@@ -716,6 +720,7 @@ struct Preference {
 
     .videoThreads: 0,
     .hardwareDecoder: HardwareDecoderOption.auto.rawValue,
+    .forceDedicatedGPU: false,
     .audioThreads: 0,
     .audioLanguage: "",
     .maxVolume: 100,
@@ -804,6 +809,7 @@ struct Preference {
     .screenshotIncludeSubtitle: true,
     .screenshotFormat: ScreenshotFormat.png.rawValue,
     .screenshotTemplate: "%F-%n",
+    .screenshotShowPreview: true,
 
     .watchProperties: [],
     .savedVideoFilters: [],
